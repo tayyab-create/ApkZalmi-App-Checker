@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.table-header {
+  @apply px-4 py-2 text-left text-sm font-bold uppercase tracking-wider border-b border-gray-200 sticky top-0 z-10 bg-gray-200;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.header-content {
+  @apply flex items-center gap-1;
+}
+
+.info-icon {
+  @apply text-gray-400 ml-2;
+  width: 1em;
+  height: 1em;
+  transition: color 0.2s;
+}
+
+.info-icon:hover {
+  @apply text-gray-600;
+}
+
+.table-cell {
+  @apply px-4 py-2 whitespace-nowrap border-b border-gray-200;
+}
+
+.table-row {
+  @apply transition duration-200;
+}
+
+.table-button-delete {
+  @apply bg-red-100 text-red-800 px-2 py-1 rounded-md hover:bg-red-200 transition duration-200 flex items-center justify-center;
+}
+
+.table-button-update {
+  @apply bg-blue-100 text-blue-800 px-2 py-1 rounded-md hover:bg-blue-200 transition duration-200 flex items-center justify-center;
+}
+
+.table-button-open {
+  @apply bg-green-500 text-white px-2 py-1 rounded-md hover:bg-green-600 transition duration-200 flex items-center justify-center;
+}
+
+.table-button-delete,
+.table-button-update,
+.table-button-open {
+  @apply transform transition-transform duration-200;
+}
+
+.table-button-delete:hover,
+.table-button-update:hover,
+.table-button-open:hover {
+  @apply scale-105;
+}
+
+.action-button {
+  @apply px-4 py-2 rounded-md transition duration-200 mx-2;
+}
+
+.action-button.fetch {
+  @apply bg-green-100 text-green-800 hover:bg-green-200;
+}
+
+.action-button.update {
+  @apply bg-yellow-100 text-yellow-800 hover:bg-yellow-200;
+}
+
+.action-button.delete-all {
+  @apply bg-red-100 text-red-800 hover:bg-red-200;
+}
+
+.action-button {
+  @apply transform transition-transform duration-200;
+}
+
+.action-button:hover {
+  @apply scale-105;
+}
+
+.night-mode-button {
+  @apply bg-gray-800 text-white p-3 rounded-full transition duration-200 ml-auto;
+}
+
+.night-mode-button:hover {
+  background-color: #4b5563; /* Slightly lighter gray for hover */
+}
+
+/* Night mode styles */
+.night-mode .table-header {
+  @apply text-gray-300 bg-gray-800 border-gray-600;
+}
+
+.night-mode .table-cell {
+  @apply text-gray-300 bg-gray-900 border-gray-700;
+}
+
+/* Dropdown styles */
+.dropdown {
+  @apply px-4 py-2 rounded-md transition duration-200 bg-white text-gray-700 mx-2;
+}
+
+.dropdown:hover {
+  @apply border-gray-400 bg-gray-50;
+}
+
+/* Specific dropdown background colors */
+.dropdown.all-apps {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.dropdown.need-update-apps {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.dropdown.updated-apps {
+  @apply bg-green-100 text-green-800;
+}
+
+.night-mode .dropdown {
+  @apply bg-gray-800 text-white border-gray-600;
+}
+
+.night-mode .dropdown:hover {
+  @apply border-gray-500 bg-gray-700;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium;
+}
+
+.badge-updated {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-needs-update {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+/* Dot styles */
+.dot {
+  @apply w-2 h-2 mr-2 rounded-full;
+}
+
+.dot-updated {
+  @apply bg-green-500;
+}
+
+.dot-needs-update {
+  @apply bg-yellow-500;
+}
+
+/* Sort by dropdown styles */
+.sort-by-dropdown {
+  @apply px-4 py-2 rounded-md transition duration-200 bg-blue-100 text-blue-800 mx-2;
+}
+
+.sort-by-dropdown:hover {
+  @apply bg-blue-200 text-blue-800;
+}
+
+.big-badge {
+  @apply inline-flex items-center text-center px-2 py-2 rounded-md text-2xl font-bold mb-10 bg-gray-400 text-white;
+}
+
+@keyframes blink-red {
+  0% {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+}
+
+@keyframes blink-blue {
+  0% {
+    background-color: rgba(0, 0, 255, 0.3);
+  }
+  50% {
+    background-color: rgba(0, 0, 255, 0.5);
+  }
+  100% {
+    background-color: rgba(0, 0, 255, 0.3);
+  }
+}
+
+.blink-red {
+  animation: blink-red 1s ease-in-out;
+}
+
+.blink-blue {
+  animation: blink-blue 1s ease-in-out;
+}
+
+.night-mode .blink-red {
+  animation: blink-red 1s ease-in-out;
+}
+
+.night-mode .blink-blue {
+  animation: blink-blue 1s ease-in-out;
+}
+
+.night-mode .table-button-delete:hover {
+  @apply bg-red-300;
+}
+
+.night-mode .table-button-update:hover {
+  @apply bg-blue-300;
+}
+
+.night-mode .table-button-open:hover {
+  @apply bg-green-400;
+}
+
+/* Night mode hover and blink fix */
+.night-mode .table-row:hover {
+  @apply bg-gray-700;
+}
+
+.night-mode .blink-red {
+  animation: blink-red 1s ease-in-out;
+}
+
+.night-mode .blink-blue {
+  animation: blink-blue 1s ease-in-out;
+}
